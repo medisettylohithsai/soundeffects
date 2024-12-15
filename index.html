@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Effects Library
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sound Effects Library</h1>
+        <p>Click on any sound to play!</p>
+
+        <div class="sound-library">
+            <div class="sound-item">
+                <button onclick="playAudio('horror')">🔊 horror</button>
+                <p class="description">an overwhelming and painful feeling caused by something frightfully shocking, terrifying, or revolting; a shuddering fear.</p>
+            </div>
+            <div class="sound-item">
+                <button onclick="playAudio('laugh')">🔊 laugh</button>
+                <p class="description">A laugh may be a sudden, voiceless exhalation, but is usually an audible sound, either soft or loud</p>
+            </div>
+            <div class="sound-item">
+                <button onclick="playAudio('thunder stroms')">🔊 thunder stroms</button>
+                <p class="description">A thunderstorm is a weather system that produces lightning, thunder, heavy rain, strong winds, and sometimes hail.</p>
+            </div>
+            <div class="sound-item">
+                <button onclick="playAudio('footsteps')">🔊 footsteps</button>
+                <p class="description">the sound or mark made by a person walking as their foot touches the ground</p>
+            </div>
+            <div class="sound-item">
+                <button onclick="playAudio('machine sound')">🔊machine sound</button>
+                <p class="description">Clang, bang and rev are all common onomatopoeias that represent the complex sounds that various machines will make.</p>
+            </div>
+            <div class="sound-item">
+                <button onclick="playAudio('bomb blast')">🔊bomb blast</button>
+                <p class="description">A bomb is an explosive weapon that uses the exothermic reaction of an explosive material to provide an extremely sudden and violent release of energy.</p>
+            </div>
+            <div class="sound-item">
+                <button onclick="playAudio('brokenglass')">🔊brokenglass</button>
+                <p class="description">In the case of glass breaking, the word "crash" effectively captures the loud, sharp, and sudden noise </p>
+            </div>
+            <div class="sound-item">
+                <button onclick="playAudio('bird')">🔊bird</button>
+                <p class="description">Common terms in English include words such as quack, chirp and chirrup.</p>
+            </div>
+            <div class="sound-item">
+                <button onclick="playAudio('animal')">🔊animal</button>
+                <p class="description">words like 'buzz,' 'hiss,' 'roar,' 'chirp,' 'woof,' and 'meow' represent the sounds made by bees, snakes, lions, birds, dogs, and cats, respectively</p>
+            </div>
+            <div class="sound-item">
+                <button onclick="playAudio('human voice')">🔊 human voice</button>
+                <p class="description">sound made by a human being using the vocal tract, including talking, singing, laughing, crying, screaming, shouting, humming or yelling</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="horror" src="audio/horror-rumble-winds-253834.mp3"></audio>
+    
+    <audio id="laugh" src="audio/girl-laugh-149491.mp3"></audio>
+    <audio id="thunder stroms" src="audio/peals-of-thunder-191992.mp3"></audio>
+    <audio id="footsteps" src="audio/footsteps-in-a-hallway-47842.mp3"></audio>
+    <audio id="machine sound" src="audio/large-steampunk-factory-machine-188048.mp3"></audio>
+    <audio id="bomb blast" src="audio/bombexplosion.mp3"></audio>
+    <audio id="brokenglass" src="audio/glass-shatter-263962.mp3"></audio>
+    <audio id="bird" src="audio/rooster-call-cock-a-doodle-doo-46096.mp3"></audio>
+    <audio id="animal" src="audio/tiger-lion-werewolf-and-leopard-sounds-195878.mp3"></audio>
+    <audio id="human voice" src="audio/_Mitrama_Asale_Chikati_Pawan_Kalyan_Dailogue_Ringtone_(by Fringster.com).mp3"></audio>
+
+   
+    <script>
+        let currentAudio = null;
+
+        function playAudio(id) {
+            // Stop the currently playing audio, if any
+            if (currentAudio && !currentAudio.paused) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0; // Reset to the beginning
+            }
+
+            // Play the new audio
+            const audio = document.getElementById(id);
+            if (audio) {
+                audio.play();
+                currentAudio = audio;
+            }
+        }
+    </script>
+
+
+</body>
+</html>
